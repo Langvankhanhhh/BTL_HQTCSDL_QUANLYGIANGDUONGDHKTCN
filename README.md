@@ -156,7 +156,95 @@
     - ![image](https://github.com/Langvankhanhhh/BTL_HQTCSDL_QUANLYGIANGDUONGDHKTCN/assets/170486633/34355c01-31b3-48c0-8035-1ae1da1b3311)
       
 1.3 VIEW HIỂN THỊ THÔNG TIN
-     -
+     - ![image](https://github.com/Langvankhanhhh/BTL_HQTCSDL_QUANLYGIANGDUONGDHKTCN/assets/170486633/858359ec-6728-4253-8a02-287375cb2e1e)
+
+2 CHỨC NĂNG NÂNG CAO
+    - CREATE TRIGGER CheckSucChuaTruocKhiInsert
+- ON ThoiKhoaBieu
+- INSTEAD OF INSERT
+- AS
+- BEGIN
+  -  DECLARE @siSo INT;
+  -  DECLARE @sucChua INT;
+  -  DECLARE @MaLop INT;
+  -  DECLARE @MaGD INT;
+
+-- Xử lý khi thêm hoặc cập nhật vật dụng bị đánh cắp
+IF EXISTS (SELECT * FROM inserted)
+BEGIN
+    DECLARE @GiangDuongID INT;
+    DECLARE @VatDungID INT;
+    
+    SELECT @GiangDuongID = GiangDuongID, @VatDungID = VatDungID FROM inserted;
+    
+    -- Kiểm tra và cập nhật thông tin vật dụng bị đánh cắp
+    UPDATE VatDungGiangDuong
+    SET DaDanCap = 1 -- Đánh dấu là đã bị đánh cắp
+    WHERE GiangDuongID = @GiangDuongID AND VatDungID = @VatDungID;
+    
+    -- Cập nhật số lượng vật dụng đã đánh cắp trong giảng đường
+    UPDATE GiangDuong
+    SET SoLuongVatDungDaDanCap = SoLuongVatDungDaDanCap + 1
+    WHERE ID = @GiangDuongID;
+END;
+
+-- Xử lý khi hủy bỏ đánh cắp vật dụng
+IF EXISTS (SELECT * FROM deleted)
+BEGIN
+    DECLARE @GiangDuongIDDel INT;
+    DECLARE @VatDungIDDel INT;
+    
+    SELECT @GiangDuongIDDel = GiangDuongID, @VatDungIDDel = VatDungID FROM deleted;
+    
+    -- Kiểm tra và cập nhật thông tin vật dụng bị hủy bỏ đánh cắp
+    UPDATE VatDungGiangDuong
+    SET DaDanCap = 0 -- Đánh dấu là không còn bị đánh cắp
+    WHERE GiangDuongID = @GiangDuongIDDel AND VatDungID = @VatDungIDDel;
+    
+    -- Cập nhật số lượng vật dụng đã đánh cắp trong giảng đường
+    UPDATE GiangDuong
+    SET SoLuongVatDungDaDanCap = CASE WHEN SoLuongVatDungDaDanCap > 0 THEN SoLuongVatDungDaDanCap - 1 ELSE 0 END
+    WHERE ID = @GiangDuongIDDel;
+END;
+
+- TÌM KIẾM THÔNG TIN
+- SELECT
+  - gd.MaGD AS IDGiangDuong,
+  - gd.TenGD AS TenGiangDuong,
+  -  gd.SucChua,
+  -  dd.ID AS IDDiaDiem,
+ -   dd.TenDiaDiem,
+  -  ISNULL(AVG(dg.SoSao), 0) AS TrungBinhSoSao
+-FROM
+ -    GiangDuong gd
+-LEFT JOIN
+ -   DiaDiemDuLich dd ON gd.DiaDiemID = dd.ID
+-LEFT JOIN
+-    DanhGia dg ON gd.MaGD = dg.GiangDuongID
+-GROUP BY
+-    gd.MaGD, gd.TenGD, gd.SucChua, dd.ID, dd.TenDiaDiem;
+
+- FROM GiangDuong gd:
+- Bảng GiangDuong được đặt alias là gd, chứa thông tin về các giảng đường.
+- LEFT JOIN DiaDiemDuLich
+-  dd ON gd.DiaDiemID = dd.ID: Sử dụng LEFT JOIN để kết nối bảng DiaDiemDuLich (alias là dd) với GiangDuong dựa trên trường DiaDiemID, để lấy thông tin về địa điểm du lịch mà giảng đường liên kết đến.
+- LEFT JOIN DanhGia
+-  dg ON gd.MaGD = dg.GiangDuongID: Sử dụng LEFT JOIN để kết nối bảng DanhGia (alias là dg) với GiangDuong dựa trên trường GiangDuongID, để lấy thông tin về các đánh giá của giảng đường.
+-SELECT:
+
+- gd.MaGD AS IDGiangDuong: Chọn MaGD (ID của giảng đường) và đổi tên cột thành IDGiangDuong.
+- gd.TenGD AS TenGiangDuong: Chọn TenGD (tên của giảng đường).
+- gd.SucChua: Chọn Sức chứa của giảng đường.
+- dd.ID AS IDDiaDiem: Chọn ID của địa điểm du lịch từ bảng DiaDiemDuLich.
+- dd.TenDiaDiem: Chọn Tên của địa điểm du lịch từ bảng DiaDiemDuLich.
+- ISNULL(AVG(dg.SoSao), 0) AS TrungBinhSoSao: Tính trung bình số sao từ các đánh giá của giảng đường (AVG(dg.SoSao)), và sử dụng ISNULL để trả về 0 nếu không có đánh giá nào.
+- GROUP BY gd.MaGD, gd.TenGD, gd.SucChua, dd.ID, dd.TenDiaDiem: Nhóm kết quả theo các cột được chọn từ bảng GiangDuong và DiaDiemDuLich.
+
+  * KẾT QUẢ
+    -
+
+
+
   
 
 

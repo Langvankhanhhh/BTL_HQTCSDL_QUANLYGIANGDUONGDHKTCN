@@ -107,7 +107,20 @@
   - TenGD: Tên của giảng đường, kiểu NVARCHAR(100).
   - SucChua: Sức chứa của giảng đường, kiểu INT.
 
-  - 
+  - ![image](https://github.com/Langvankhanhhh/BTL_HQTCSDL_QUANLYGIANGDUONGDHKTCN/assets/170486633/e5ebd1c0-4b74-41a9-afd8-dcc6cf298ee7)
+
+  - Bảng ThoiKhoaBieu:
+
+  - MaTKB: Là khóa chính của bảng ThoiKhoaBieu,
+  - kiểu INT, tự động tăng (IDENTITY(1,1)),
+  - dùng để định danh từng thời khóa biểu.
+  - MaLop: Khóa ngoại tham chiếu đến bảng LopHoc,
+  - dùng để xác định lớp học trong thời khóa biểu.
+  - MaGD: Khóa ngoại tham chiếu đến bảng GiangDuong,
+  - dùng để xác định giảng đường sử dụng trong thời khóa biểu.
+  - ThoiGian: Thời gian diễn ra lớp học, kiểu DATETIME.
+
+  -
 
 
 

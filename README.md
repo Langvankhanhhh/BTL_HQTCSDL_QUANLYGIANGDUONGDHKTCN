@@ -74,7 +74,7 @@
 1 TẠO BẢNG
 - Bảng GiangVien:
 
-- MaGV: Là khóa chính (primary key) của bảng GiangVien, kiểu INT, tự động tăng (IDENTITY(1,1)), 
+- MaGV: Là khóa chính🔑 (primary key) của bảng GiangVien, kiểu INT, tự động tăng (IDENTITY(1,1)), 
 - dùng để định danh từng giảng viên một cách duy nhất.
 - HoTen: Tên của giảng viên, kiểu NVARCHAR(100).
 - Khoa: Khoa mà giảng viên thuộc về, kiểu NVARCHAR(100).
@@ -83,7 +83,7 @@
 
 - Bảng MonHoc:
   
- - MaMH: Là khóa chính của bảng MonHoc, kiểu INT, tự động tăng (IDENTITY(1,1)),
+ - MaMH:🔑 Là khóa chính của bảng MonHoc, kiểu INT, tự động tăng (IDENTITY(1,1)),
  - dùng để định danh từng môn học.
  - TenMH: Tên của môn học, kiểu NVARCHAR(100).
  - SoTinChi: Số tín chỉ của môn học, kiểu INT.
@@ -92,7 +92,7 @@
 
 -  Bảng LopHoc:
 
-  - MaLop: Là khóa chính của bảng LopHoc, kiểu INT,
+  - MaLop:🔑 Là khóa chính của bảng LopHoc, kiểu INT,
   - tự động tăng (IDENTITY(1,1)), dùng để định danh từng lớp học.
   - MaMH: Khóa ngoại tham chiếu đến bảng MonHoc, dùng để xác định môn học của lớp học.
   - MaGV: Khóa ngoại tham chiếu đến bảng GiangVien, dùng để xác định giảng viên phụ trách lớp học.
@@ -102,7 +102,7 @@
 
   - Bảng GiangDuong:
 
-  - MaGD: Là khóa chính của bảng GiangDuong, kiểu INT, tự động tăng (IDENTITY(1,1)),
+  - MaGD:🔑 Là khóa chính của bảng GiangDuong, kiểu INT, tự động tăng (IDENTITY(1,1)),
   - dùng để định danh từng giảng đường.
   - TenGD: Tên của giảng đường, kiểu NVARCHAR(100).
   - SucChua: Sức chứa của giảng đường, kiểu INT.
@@ -111,7 +111,7 @@
 
   - Bảng ThoiKhoaBieu:
 
-  - MaTKB: Là khóa chính của bảng ThoiKhoaBieu,
+  - MaTKB:🔑 Là khóa chính của bảng ThoiKhoaBieu,
   - kiểu INT, tự động tăng (IDENTITY(1,1)),
   - dùng để định danh từng thời khóa biểu.
   - MaLop: Khóa ngoại tham chiếu đến bảng LopHoc,
@@ -120,7 +120,22 @@
   - dùng để xác định giảng đường sử dụng trong thời khóa biểu.
   - ThoiGian: Thời gian diễn ra lớp học, kiểu DATETIME.
 
-  -
+  - ![image](https://github.com/Langvankhanhhh/BTL_HQTCSDL_QUANLYGIANGDUONGDHKTCN/assets/170486633/79439619-aac2-4a68-8c2b-3bbc2d5eab70)
+
+2 THÊM DỮ LIỆU VÀO BẢNG
+- ADD VÀO CÁC 
+- chèn dữ liệu vào bảng giangvien
+- GiangVien INSERT INTO GiangVien
+- (HoTen, Khoa) VALUES('Nguyen Van A', 'CNTT'),('Le Thi B', 'Toan');
+- chèn liệu vào bảng monhoc
+- MonHocINSERT INTO MonHoc
+- (TenMH, SoTinChi) VALUES('Lap Trinh C', 3),('Toan Roi Rac', 4);
+- chèn liệu vào bảng giangduong
+- GiangDuongINSERT INTO GiangDuong (TenGD, SucChua) VALUES('GD101', 50),('GD102', 100);
+- chèn liệu vào bảng lophoc
+- LopHocINSERT INTO LopHoc (MaMH, MaGV, SiSo) VALUES(1, 1, 45),(2, 2, 60);
+- chèn dữ liệu vào bảng thoikhoabieu
+- ThoiKhoaBieuINSERT INTO ThoiKhoaBieu (MaLop, MaGD, ThoiGian) VALUES(1, 1, '2024-06-20 08:00:00'),(2, 2, '2024-06-21 10:00:00');
 
 
 

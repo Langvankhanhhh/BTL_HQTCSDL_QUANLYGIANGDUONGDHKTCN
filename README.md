@@ -144,6 +144,7 @@
 ## THIẾT LẬP CHỨC NĂNG
 1 CHỨC NĂNG CƠ BẢN
 1.1 CHỨC NĂNG TÌM KIẾM THÔNG 
+
 * yêu cầu thêm xóa
   - CREATE PROCEDURE XoaGiangVien;
 * sửa giảng viên
@@ -152,7 +153,10 @@
 - CHỨC NĂNG XÓA
     - ![image](https://github.com/Langvankhanhhh/BTL_HQTCSDL_QUANLYGIANGDUONGDHKTCN/assets/170486633/bca7eb9e-afc8-4b83-9332-40f507a313f7)
 - CHỨC NĂNG SỬA
-    -   
+    - ![image](https://github.com/Langvankhanhhh/BTL_HQTCSDL_QUANLYGIANGDUONGDHKTCN/assets/170486633/34355c01-31b3-48c0-8035-1ae1da1b3311)
+      
+1.3 VIEW HIỂN THỊ THÔNG TIN
+     -
   
 
 

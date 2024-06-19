@@ -122,6 +122,9 @@
 
   - ![image](https://github.com/Langvankhanhhh/BTL_HQTCSDL_QUANLYGIANGDUONGDHKTCN/assets/170486633/79439619-aac2-4a68-8c2b-3bbc2d5eab70)
 
+  - SƠ ĐỒ THỰC THỂ LIÊN KẾT
+  - ![Screenshot (171)](https://github.com/Langvankhanhhh/BTL_HQTCSDL_QUANLYGIANGDUONGDHKTCN/assets/170486633/0639e6db-1b90-4b1a-bf69-065d409aa489)
+
 2 THÊM DỮ LIỆU VÀO BẢNG
 - ADD VÀO CÁC 
 - chèn dữ liệu vào bảng giangvien
@@ -138,7 +141,16 @@
 - ThoiKhoaBieuINSERT INTO ThoiKhoaBieu (MaLop, MaGD, ThoiGian) VALUES(1, 1, '2024-06-20 08:00:00'),(2, 2, '2024-06-21 10:00:00');
 
 
-
+## THIẾT LẬP CHỨC NĂNG
+1 CHỨC NĂNG CƠ BẢN
+1.1 CHỨC NĂNG TÌM KIẾM THÔNG 
+* yêu cầu thêm xóa
+  - CREATE PROCEDURE XoaGiangVien;
+* sửa giảng viên
+  - CREATE PROCEDURE SuaGiangVien;
+1.2 CHỨC NĂNG THÊM XÓA, SỬA
+    - CHỨC NĂNG XÓA
+    - 
 
   
 

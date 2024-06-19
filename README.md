@@ -149,9 +149,10 @@
 * sửa giảng viên
   - CREATE PROCEDURE SuaGiangVien;
 1.2 CHỨC NĂNG THÊM XÓA, SỬA
-    - CHỨC NĂNG XÓA
-    - 
-
+- CHỨC NĂNG XÓA
+    - ![image](https://github.com/Langvankhanhhh/BTL_HQTCSDL_QUANLYGIANGDUONGDHKTCN/assets/170486633/bca7eb9e-afc8-4b83-9332-40f507a313f7)
+- CHỨC NĂNG SỬA
+    -   
   
 
 

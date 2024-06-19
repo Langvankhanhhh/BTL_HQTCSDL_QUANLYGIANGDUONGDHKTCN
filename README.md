@@ -241,13 +241,21 @@ END;
 - GROUP BY gd.MaGD, gd.TenGD, gd.SucChua, dd.ID, dd.TenDiaDiem: Nhóm kết quả theo các cột được chọn từ bảng GiangDuong và DiaDiemDuLich.
 
   * KẾT QUẢ
-    -
+    - View hiển thị GiangVien_LopHoc AS
+SELECT GV.HoTen, MH.TenMH, LH.SiSo
+FROM GiangVien GV
+JOIN LopHoc LH ON GV.MaGV = LH.MaGV
+JOIN MonHoc MH ON LH.MaMH = MH.MaMH;
 
-
-
+    - ![Capture](https://github.com/Langvankhanhhh/BTL_HQTCSDL_QUANLYGIANGDUONGDHKTCN/assets/170486633/affbc6e6-ffff-40be-94b5-afc53b530d23)
   
-
-
-
+- View hiển thị thời khóa biểu chi tiết
+- CREATE VIEW V_ThoiKhoaBieu AS
+- SELECT TKB.MaTKB, GV.HoTen, MH.TenMH, GD.TenGD, TKB.ThoiGian
+- FROM ThoiKhoaBieu TKB
+- JOIN LopHoc LH ON TKB.MaLop = LH.MaLop
+- JOIN GiangVien GV ON LH.MaGV = GV.MaGV
+- JOIN MonHoc MH ON LH.MaMH = MH.MaMH
+- JOIN GiangDuong GD ON TKB.MaGD = GD.MaGD;
 
 

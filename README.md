@@ -98,7 +98,19 @@
   - MaGV: Khóa ngoại tham chiếu đến bảng GiangVien, dùng để xác định giảng viên phụ trách lớp học.
   - SiSo: Sĩ số của lớp học, kiểu INT.
 
+  - ![image](https://github.com/Langvankhanhhh/BTL_HQTCSDL_QUANLYGIANGDUONGDHKTCN/assets/170486633/f0ed4b14-e3ad-425d-8ea9-89c13acd7cc6)
+
+  - Bảng GiangDuong:
+
+  - MaGD: Là khóa chính của bảng GiangDuong, kiểu INT, tự động tăng (IDENTITY(1,1)),
+  - dùng để định danh từng giảng đường.
+  - TenGD: Tên của giảng đường, kiểu NVARCHAR(100).
+  - SucChua: Sức chứa của giảng đường, kiểu INT.
+
   - 
+
+
+
 
   
 

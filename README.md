@@ -259,3 +259,5 @@ JOIN MonHoc MH ON LH.MaMH = MH.MaMH;
 - JOIN GiangDuong GD ON TKB.MaGD = GD.MaGD;
 - ![Capture 1](https://github.com/Langvankhanhhh/BTL_HQTCSDL_QUANLYGIANGDUONGDHKTCN/assets/170486633/4fe2de9d-99da-45b8-b740-8721215042df)
 
+- PHẦN QR CODE CỦA BÀI EM Ạ EM CẢM ƠN THẦY!!
+- ![qr](https://github.com/Langvankhanhhh/BTL_HQTCSDL_QUANLYGIANGDUONGDHKTCN/assets/170486633/5b7a1fff-aa6b-4221-ba27-19850f881a3e)

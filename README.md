@@ -257,5 +257,5 @@ JOIN MonHoc MH ON LH.MaMH = MH.MaMH;
 - JOIN GiangVien GV ON LH.MaGV = GV.MaGV
 - JOIN MonHoc MH ON LH.MaMH = MH.MaMH
 - JOIN GiangDuong GD ON TKB.MaGD = GD.MaGD;
-
+- ![Capture 1](https://github.com/Langvankhanhhh/BTL_HQTCSDL_QUANLYGIANGDUONGDHKTCN/assets/170486633/4fe2de9d-99da-45b8-b740-8721215042df)
 

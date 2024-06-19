@@ -79,7 +79,16 @@
 - HoTen: Tên của giảng viên, kiểu NVARCHAR(100).
 - Khoa: Khoa mà giảng viên thuộc về, kiểu NVARCHAR(100).
   
-- 
+- ![1](https://github.com/Langvankhanhhh/BTL_HQTCSDL_QUANLYGIANGDUONGDHKTCN/assets/170486633/09ce8c69-b471-4907-8943-b8b6cd592c1a)
+
+- Bảng MonHoc:
+  
+ - MaMH: Là khóa chính của bảng MonHoc, kiểu INT, tự động tăng (IDENTITY(1,1)),
+ - dùng để định danh từng môn học.
+ - TenMH: Tên của môn học, kiểu NVARCHAR(100).
+ - SoTinChi: Số tín chỉ của môn học, kiểu INT.
+
+ - 
 
   
 

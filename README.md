@@ -88,7 +88,17 @@
  - TenMH: Tên của môn học, kiểu NVARCHAR(100).
  - SoTinChi: Số tín chỉ của môn học, kiểu INT.
 
- - 
+ - ![image](https://github.com/Langvankhanhhh/BTL_HQTCSDL_QUANLYGIANGDUONGDHKTCN/assets/170486633/8289585e-9e2d-4bc1-891b-9c4fd4d89bab)
+
+-  Bảng LopHoc:
+
+  - MaLop: Là khóa chính của bảng LopHoc, kiểu INT,
+  - tự động tăng (IDENTITY(1,1)), dùng để định danh từng lớp học.
+  - MaMH: Khóa ngoại tham chiếu đến bảng MonHoc, dùng để xác định môn học của lớp học.
+  - MaGV: Khóa ngoại tham chiếu đến bảng GiangVien, dùng để xác định giảng viên phụ trách lớp học.
+  - SiSo: Sĩ số của lớp học, kiểu INT.
+
+  - 
 
   
 
